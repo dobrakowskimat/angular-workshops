@@ -3,7 +3,6 @@
     <div><span>Last Name:</span><input type="text" formControlName="lastName" /></div>
     <div><span>Age:</span><input type="text" formControlName="age" /></div>
     <span *ngIf="customerForm.get('age').errors?.range">Please enter proper age</span>
-    <!-- <ng-container *ngFor='let control of this.customerForm.controls.phoneNumbers; let i = index'> -->
     <div>
         <div formArrayName="phoneNumbers" *ngFor="let number of phoneNumbers.controls; let i = index">
             <div [formGroupName]="i">
@@ -16,10 +15,6 @@
     </div>
     <div (click)="addPhoneNumber()">+</div>
 </form>
-
-<!-- <div *ngFor="let control of customerForm.controls">
-  {{ control.value }}
-</div> -->
 
 <ng-template>
     <input type="text" formControlName="label" />
