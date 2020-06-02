@@ -8,7 +8,6 @@ function ageValidator(control: AbstractControl): { [key: string]: boolean } | nu
       range: true,
     };
   }
-
   return null;
 }
 
@@ -42,7 +41,6 @@ export class CustomerEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerForm = this.fb.group({
-      // name: [this.data?.name ?? ''],
       name: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       age: new FormControl(null, rangeValidator(0, 120)),
@@ -63,14 +61,4 @@ export class CustomerEditComponent implements OnInit {
   addPhoneNumber() {
     this.phoneNumbers.push(this.createPhoneNumer());
   }
-
-  // addPhoneNumber() {
-  //   const formArr = this.customerForm.controls.phoneNumbers as FormArray;
-  //   formArr.push(
-  //     this.fb.group({
-  //       label: new FormControl(''),
-  //       number: new FormControl(),
-  //     })
-  //   );
-  // }
 }
