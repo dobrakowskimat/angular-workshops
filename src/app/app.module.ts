@@ -9,9 +9,13 @@ import { MovieFormComponent } from './components/movie-form/movie-form.component
 import { CustomerComponent } from './components/customer/customer.component';
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UserComponent } from './components/user/user.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +27,12 @@ import { UserComponent } from './components/user/user.component';
     CustomerEditComponent,
     UserEditComponent,
     UserComponent,
+    AdminComponent,
+    LoginComponent,
+    PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    BrowserAnimationsModule,
-  ],
+  imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, MatDialogModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
