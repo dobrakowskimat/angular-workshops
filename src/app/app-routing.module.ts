@@ -7,6 +7,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'login', component: LoginComponent },
+  {
+    path: '',
+    children: [{ path: 'users', loadChildren: () => import('./users/users.module').then((module) => module.UsersModule) }],
+  },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', component: PageNotFoundComponent },
 ];
