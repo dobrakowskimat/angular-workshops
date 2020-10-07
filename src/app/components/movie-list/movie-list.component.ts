@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+  styleUrls: ['./movie-list.component.scss'],
 })
 export class MovieListComponent implements OnInit {
-
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService) {}
   movies$: Observable<Movie[]>;
   inputValue: string;
-  today: Date;
+  today: Date = new Date();
   isInEditMode: boolean;
   movieToEdit: null;
 
@@ -23,14 +22,14 @@ export class MovieListComponent implements OnInit {
     genres: ['drama', 'comedy'],
     releaseDate: this.today,
     title: 'Super Film about Angular',
-  }
+  };
 
   ngOnInit() {
     this.today = new Date();
     this.movies$ = this.moviesService.getMovies().pipe(
-      map(movies => {
-        return movies.filter(u => u.id > 2);
-      })
+      map((movies) => {
+        return movies.filter((u) => u.id > 2);
+      }),
     );
   }
 
