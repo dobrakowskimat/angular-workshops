@@ -1,2 +1,6 @@
-
 <button (click)="openDialog()">Edit user</button>
+
+<form [formGroup]="customForm">
+    <span>customCheckbox:</span>
+    <app-custom-form-control formControlName="customCheckbox"></app-custom-form-control>
+</form>
