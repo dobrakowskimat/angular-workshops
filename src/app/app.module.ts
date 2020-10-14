@@ -11,11 +11,11 @@ import { CustomerEditComponent } from './components/customer-edit/customer-edit.
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
-import { UserComponent } from './components/user/user.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CustomFormControlComponent } from './shared/custom-form-control/custom-form-control.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CustomerComponent,
     CustomerEditComponent,
     UserEditComponent,
-    UserComponent,
     AdminComponent,
     LoginComponent,
     PageNotFoundComponent,
+    CustomFormControlComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, MatDialogModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
